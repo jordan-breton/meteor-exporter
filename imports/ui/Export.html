@@ -1,0 +1,14 @@
+<template name="export">
+	<li class="export">
+		<div class="name">{{name}}</div>
+		{{#if completed}}
+			<span>Completed!</span>
+			<a href="{{url}}">&rarr; {{url}}</a>
+		{{else}}
+			<div class="progress">
+				<progress max="100" value="{{progress}}"></progress>
+				<span>{{progress}}%</span>
+			</div>
+		{{/if}}
+	</li>
+</template>

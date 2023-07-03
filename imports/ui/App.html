@@ -1,0 +1,42 @@
+<body>
+{{> mainContainer }}
+</body>
+
+<template name="mainContainer">
+	<div class="app">
+		<header>
+			<div class="app-bar">
+				<div class="app-header">
+					<h1>🚀 Exporter</h1>
+					<div>
+						<span>Don't be shy, start a new</span>
+						<button id="start-export">Export</button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="main">
+
+			<div class="filter">
+				<button id="hide-completed-button">
+					{{#if hideCompleted}}
+						Show All
+					{{else}}
+						Hide Completed
+					{{/if}}
+				</button>
+			</div>
+
+			{{#if isLoading}}
+				<div class="loading">loading exports...</div>
+			{{/if}}
+
+			<ul class="exports">
+				{{#each exports}}
+					{{> export}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</template>
